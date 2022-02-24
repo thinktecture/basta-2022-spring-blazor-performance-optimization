@@ -1,0 +1,16 @@
+﻿@if (_speaker != null)
+{
+    <MudDialog>
+        <DialogContent>
+            <EditForm class="d-flex flex-column" style="gap: 2rem;" Model="_speaker" OnSubmit="Submit">
+                <CustomInput @bind-Value="_speaker.FirstName" PreventRendering="PreventRendering"  Label="First name"></CustomInput>
+                <CustomInput @bind-Value="_speaker.LastName" PreventRendering="PreventRendering"  Label="Last name"></CustomInput>
+                <CustomInput @bind-Value="_speaker.Email" PreventRendering="PreventRendering"  Label="Email"></CustomInput>
+            </EditForm>
+        </DialogContent>
+        <DialogActions>
+            <MudButton ButtonType="ButtonType.Button" OnClick="Cancel">Abbrechen</MudButton>
+            <MudButton ButtonType="ButtonType.Submit" Color="Color.Primary" OnClick="Submit">Speichern</MudButton>
+        </DialogActions>
+    </MudDialog>
+}

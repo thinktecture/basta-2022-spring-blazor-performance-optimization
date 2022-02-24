@@ -1,0 +1,31 @@
+﻿@inherits CollectionBaseComponent<BlazorPerformance.Shared.Models.Speaker, SpeakerEditor>
+
+@if (IsLoading)
+{
+    <div class="spinner"></div>
+}
+else
+{
+    <Collection TItem="BlazorPerformance.Shared.Models.Speaker"
+            Items="Collection"
+            Virtualize="VirtualizeEnabled"
+            WithItemsProvider="WithItemsProvider"
+            SearchTerm="@SearchTerm">
+        <HeaderContent>
+            <div class="col col-1">First name</div>
+            <div class="col col-2">Last name</div>
+            <div class="col col-3">E-Mail</div>
+        </HeaderContent>
+        <RowContent>
+            <SpeakerRow Speaker="@context"></SpeakerRow>
+        </RowContent>
+        <RowPlaceholder>
+            <li class="table-row">
+                <div class="col col-1"><MudSkeleton /></div>
+                <div class="col col-2"><MudSkeleton /></div>
+                <div class="col col-3"><MudSkeleton /></div>
+            </li>
+        </RowPlaceholder>
+    </Collection>
+}
+

@@ -1,0 +1,7 @@
+@inherits InputBase<string>
+
+<div class="group">
+    <input class="form-control @CssClass" placeholder="Override ShouldRender" id="@Id" value="@Value" @oninput="(ChangeEventArgs args) => HandleOnInput(args.Value?.ToString())" />
+    <label>@Label</label>
+    <span class="render-message">@_renderMessage</span>
+</div>
